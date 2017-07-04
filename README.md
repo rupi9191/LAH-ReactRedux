@@ -4,6 +4,7 @@ npm install --save-dev babel-core babel-loader babel-preset-es2015 babel-preset-
 
 # Usage
 ```
+cd <Project>
 npm i -g webpack
 npm i -g webpack-dev-server
 npm install
