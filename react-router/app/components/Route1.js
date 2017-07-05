@@ -1,9 +1,32 @@
 var React = require('react');
 
+let state = {count: 0};
 class Route1 extends React.Component {
+    constructor() {
+        super();
+        this.state = state;
+        this.incrementCounter = this.incrementCounter.bind(this);
+    }
+    
+    componentWillUnmount() {
+        state = this.state;
+    }
+
+    incrementCounter() {
+        this.setState((prevState) => {
+            return {
+                count: prevState.count + 1
+            }
+        });
+    }
+
     render() {
         return(
-            <div>Route1</div>
+            <div>
+                <h1>Route1</h1>
+                <p>Count: {this.state.count}</p>
+                <button onClick={this.incrementCounter}>+</button>
+            </div>
         )
     }
 }
