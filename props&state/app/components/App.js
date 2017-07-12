@@ -1,11 +1,14 @@
 var React = require('react');
 
 class Greeting extends React.Component {
+
     render() {
+        const name = {firstName: "rupesh"}
         return(
             <div>
-                Hello <User firstName="Rupesh" lastName="B" />
-                <StateComponent/>
+                <p>Hello</p>
+               <StateComponent/>
+                
              </div>
         )
     }
@@ -13,23 +16,25 @@ class Greeting extends React.Component {
 
 //component with props
 class User extends React.Component {
+    constructor() {
+        super();
+    }
  
     render() {
         const {firstName, lastName} = this.props;
 
         return (
-            <span>{`${firstName} ${lastName}`}</span>
+            <span>{`${firstName.firstName} ${lastName}`}</span>
         )
     }
 }
 
+let state = {firstName: "rupesh"}
 // component with state
 class StateComponent extends React.Component {
     constructor() {
         super();
-        this.state = {
-            firstName: "Rupesh"
-        }
+        this.state = state;
         this.changeState = this.changeState.bind(this);
     }
 

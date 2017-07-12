@@ -11348,16 +11348,16 @@ module.exports = getHostComponentFromComposite;
 "use strict";
 
 
-var _Route = __webpack_require__(96);
+var _Routing = __webpack_require__(96);
 
-var _Route2 = _interopRequireDefault(_Route);
+var _Routing2 = _interopRequireDefault(_Routing);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var React = __webpack_require__(7);
 var ReactDOM = __webpack_require__(141);
 
-ReactDOM.render(React.createElement(_Route2.default, null), document.getElementById('root'));
+ReactDOM.render(React.createElement(_Routing2.default, null), document.getElementById('root'));
 
 /***/ }),
 /* 96 */
@@ -11463,6 +11463,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var React = __webpack_require__(7);
 
+var state = { count: 0 };
+
 var Route1 = function (_React$Component) {
     _inherits(Route1, _React$Component);
 
@@ -11471,12 +11473,17 @@ var Route1 = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Route1.__proto__ || Object.getPrototypeOf(Route1)).call(this));
 
-        _this.state = { counter: 0 };
+        _this.state = state;
         _this.incrementCounter = _this.incrementCounter.bind(_this);
         return _this;
     }
 
     _createClass(Route1, [{
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            state = this.state;
+        }
+    }, {
         key: 'incrementCounter',
         value: function incrementCounter() {
             this.setState(function (prevState) {
@@ -11495,6 +11502,12 @@ var Route1 = function (_React$Component) {
                     'h1',
                     null,
                     'Route1'
+                ),
+                React.createElement(
+                    'p',
+                    null,
+                    'Count: ',
+                    this.state.count
                 ),
                 React.createElement(
                     'button',
@@ -13337,6 +13350,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var React = __webpack_require__(7);
 
+var state = { count: 0 };
+
 var Route2 = function (_React$Component) {
     _inherits(Route2, _React$Component);
 
@@ -13345,12 +13360,17 @@ var Route2 = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Route2.__proto__ || Object.getPrototypeOf(Route2)).call(this));
 
-        _this.state = { count: 0 };
+        _this.state = state;
         _this.incrementCounter = _this.incrementCounter.bind(_this);
         return _this;
     }
 
     _createClass(Route2, [{
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            state = this.state;
+        }
+    }, {
         key: 'incrementCounter',
         value: function incrementCounter() {
             this.setState(function (prevState) {

@@ -25,7 +25,7 @@ class Route2 extends React.Component {
             <div>
                 <h1>Route2</h1>
                 <p>Count: {this.state.count}</p>
-                <button onClick={this.incrementCounter}>Increment</button>
+                <button onClick={this.incrementCounter}>+</button>
             </div>
         )
     }

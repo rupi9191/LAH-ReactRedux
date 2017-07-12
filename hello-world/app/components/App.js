@@ -8,13 +8,23 @@ var React = require('react');
  */
 //UI
 
-class App extends React.Component {
+export class App extends React.Component {
+    componentDidMount() {
+        console.log("mounted")
+    }
     render() {
         return(
-            <div>Hello World</div>
+            <div>Hello Rupesdfhjldf</div>
+        )
+    }
+}
+export class App1 extends React.Component {
+    render() {
+        return(
+            <div>Hello</div>
         )
     }
 }
 
-module.exports = App;
+
 

@@ -22290,7 +22290,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var React = __webpack_require__(49);
 
 //state
-//lifecycle events
+/**lifecycle events
+ *componentDidMount()
+ * componentWillMount()
+ * componentWillReceiveProps()
+ */
 //UI
 
 var App = function (_React$Component) {

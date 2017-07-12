@@ -1,6 +1,7 @@
 var React = require('react');
 var ReactRouter = require('react-router-dom');
 var Router = ReactRouter.BrowserRouter;
+var browserHistory = ReactRouter.browserHistory;
 var Route = ReactRouter.Route;
 var Link = ReactRouter.Link;
 
@@ -12,7 +13,7 @@ class Routing extends React.Component {
     render() {
         return(
                      
-            <Router>
+            <Router history={browserHistory}>
                 <div>
                     <ul>
                         <li><Link to="/1">Route1</Link></li>

@@ -9783,7 +9783,7 @@ var React = __webpack_require__(49);
 var ReactDOM = __webpack_require__(98);
 var Greeting = __webpack_require__(184);
 
-ReactDOM.render(React.createElement(Greeting, null), document.getElementById('root'));
+ReactDOM.render(React.createElement(Greeting, { name: 'something' }), document.getElementById('root'));
 
 /***/ }),
 /* 83 */
@@ -22301,11 +22301,15 @@ var Greeting = function (_React$Component) {
     _createClass(Greeting, [{
         key: "render",
         value: function render() {
+            var name = { firstName: "rupesh" };
             return React.createElement(
                 "div",
                 null,
-                "Hello ",
-                React.createElement(User, { firstName: "Rupesh", lastName: "B" }),
+                React.createElement(
+                    "p",
+                    null,
+                    "Hello"
+                ),
                 React.createElement(StateComponent, null)
             );
         }
@@ -22314,13 +22318,16 @@ var Greeting = function (_React$Component) {
     return Greeting;
 }(React.Component);
 
+//component with props
+
+
 var User = function (_React$Component2) {
     _inherits(User, _React$Component2);
 
     function User() {
         _classCallCheck(this, User);
 
-        return _possibleConstructorReturn(this, (User.__proto__ || Object.getPrototypeOf(User)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (User.__proto__ || Object.getPrototypeOf(User)).call(this));
     }
 
     _createClass(User, [{
@@ -22334,7 +22341,7 @@ var User = function (_React$Component2) {
             return React.createElement(
                 "span",
                 null,
-                firstName + " " + lastName
+                firstName.firstName + " " + lastName
             );
         }
     }]);
@@ -22342,6 +22349,9 @@ var User = function (_React$Component2) {
     return User;
 }(React.Component);
 
+var state = { firstName: "rupesh"
+    // component with state
+};
 var StateComponent = function (_React$Component3) {
     _inherits(StateComponent, _React$Component3);
 
@@ -22350,9 +22360,7 @@ var StateComponent = function (_React$Component3) {
 
         var _this3 = _possibleConstructorReturn(this, (StateComponent.__proto__ || Object.getPrototypeOf(StateComponent)).call(this));
 
-        _this3.state = {
-            firstName: "Rupesh"
-        };
+        _this3.state = state;
         _this3.changeState = _this3.changeState.bind(_this3);
         return _this3;
     }
@@ -22362,7 +22370,7 @@ var StateComponent = function (_React$Component3) {
         value: function changeState(e) {
             e.preventDefault();
             this.setState(function () {
-                firstName: "Changed";
+                return { firstName: "Changed" };
             });
         }
     }, {
