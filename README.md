@@ -1,6 +1,10 @@
 # LAH-ReactRedux
 # Packages required
-npm install --save-dev babel-core babel-loader babel-preset-es2015 babel-preset-react css-loader style-loader html-webpack-plugin webpack webpack-dev-server
+dependencies:
+```npm i --save react react-dom react-router-dom```
+
+devDependencies:
+```npm install --save-dev babel-core babel-loader babel-preset-es2015 babel-preset-react css-loader style-loader html-webpack-plugin webpack webpack-dev-server```
 
 # Usage
 ```
